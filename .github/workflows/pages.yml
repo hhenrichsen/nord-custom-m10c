@@ -27,6 +27,7 @@ jobs:
         EXTERNAL_REPOSITORY: hhenrichsen/
         PUBLISH_BRANCH: pages
         PUBLISH_DIR: ./exampleSite/public
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         emptyCommits: false
         commitMessage: ${{ github.event.head_commit.message }}
