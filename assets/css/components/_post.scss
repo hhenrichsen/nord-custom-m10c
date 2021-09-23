@@ -10,6 +10,7 @@
   h5,
   p {
     color: $lightest-color;
+    line-height: 1.6em;
   }
 }
 
@@ -51,6 +52,10 @@
   &:first-child h2 {
     margin-top: 0;
   }
+}
+
+.post {
+  max-width: 640px;
 }
 
 .post-content {
