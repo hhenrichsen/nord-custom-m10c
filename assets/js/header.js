@@ -16,6 +16,11 @@
         heading.parentElement.replaceChild(div, heading);
         div.appendChild(heading);
         div.appendChild(link);
+        link.addEventListener('click', (event) => {
+            const baseLocation = window.location.href.slice(0, window.location.href.indexOf("#"))
+            event.preventDefault();
+            navigator.clipboard.writeText(`${baseLocation}#${slug}`);
+        })
     })
 
     feather.replace();
