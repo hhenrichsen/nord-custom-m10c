@@ -27,8 +27,20 @@
     copyBtn.className = "highlight-copy-btn";
     copyBtn.textContent = "Copy";
 
-    var codeEl = containerEl.firstElementChild.parentElement;
+    var elements = containerEl.querySelectorAll('pre');
+    console.log(elements);
+
+    var codeEl;
+    if (elements.length > 1) {
+      codeEl = elements[1];
+    }
+    else {
+      codeEl = elements[0];
+    }
     console.log(codeEl);
+    new SimpleBar(codeEl, {
+      autoHide: true
+    });
     copyBtn.addEventListener('click', function() {
       try {
         var selection = selectText(codeEl.firstElementChild);
@@ -53,9 +65,6 @@
   var blockArr = Array.prototype.slice.call(highlightBlocks);
   console.log(blockArr);
   blockArr.forEach((el) => {
-    new SimpleBar(el, {
-      autoHide: true
-    });
     addCopyButton(el);
   });
 })();
