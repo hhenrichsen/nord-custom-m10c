@@ -1,10 +1,14 @@
+:root {
+  --base-font-size: 16px;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  line-height: 1.6;
-  font-size: 16px;
+  line-height: 1.6em;
+  font-size: var(--base-font-size);
 }
 
 body {
@@ -23,6 +27,20 @@ body {
 
 h1 {
   font-size: 2em;
+}
+
+.display-small {
+  visibility: visible;
+  @media (min-width: 1072px) {
+    visibility: hidden;
+  }
+}
+
+.display-large {
+  visibility: hidden;
+  @media (min-width: 1072px) {
+    visibility: visible;
+  }
 }
 
 h1,
@@ -118,4 +136,10 @@ pre {
 }
 ::-moz-selection {
   background: rgba($primary-color, 0.33);
+}
+
+footer {
+  p {
+    margin: 0.2em auto;
+  }
 }

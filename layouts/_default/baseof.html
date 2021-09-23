@@ -12,12 +12,17 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
     {{ $codeblockjs := resources.Get "js/codeblock.js" | js.Build }}
     <script defer src="{{ $codeblockjs.Permalink }}"></script>
+
     {{ range .Site.Params.custom_css -}}
         <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
 
     {{ range .Site.Params.custom_js -}}
         <script type="text/javascript" src="{{ . | absURL }}"></script>
+    {{- end }}
+
+    {{ range .Site.Params.custom_js_defer -}}
+        <script type="text/javascript" defer src="{{ . | absURL }}"></script>
     {{- end }}
 
     {{ template "_internal/google_analytics.html" . }}
