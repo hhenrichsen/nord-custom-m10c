@@ -3,6 +3,7 @@ $dark-color: {{ .Site.Params.style.darkColor | default "#424c5e" }};
 $light-color: {{ .Site.Params.style.lightColor | default "#d8dee9" }};
 $lightest-color: {{ .Site.Params.style.lightestColor | default "#eceff4" }};
 $primary-color: {{ .Site.Params.style.primaryColor | default "#5e81ac" }};
+$monofont: {{ .Site.Params.style.monospaceFont | default "monospace" }};
 
 @import 'base';
 
