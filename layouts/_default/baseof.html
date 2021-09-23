@@ -40,11 +40,44 @@
         {{ end }}
       </div>
       {{- end }}
+      <div class="spacer"></div>
+      {{- with .Site.Params.footer }}
+      <footer class="left-footer">
+        {{ range . }}
+        <p>{{ .description }} 
+          {{ if ne .url 0 }}
+            <a href="{{ .url }}">{{ .name }}</a>
+          {{ end }}
+        </p>
+        {{ end }}
+        <p>
+          Copyright &copy; {{ now.Format "2006" }} {{ $.Site.Params.author }}
+        </p>
+      </footer>
+    {{- end }}
     </header>
+    <div class="app-header-spacer"></div>
     <main class="app-container">
       {{ block "main" . }}
         {{ .Content }}
       {{ end }}
+      <div class="spacer"></div>
+      <footer class="footer">
+        {{- with .Site.Params.footer }}
+          {{ range . }}
+          <p>
+            {{ if (isset . "url" )}}
+              {{ .description }} <a href="{{ .url }}">{{ .name }}</a>.
+            {{ else }}
+              {{- .description -}}.
+            {{ end }}
+          </p>
+          {{ end }}
+        {{- end }}
+        <p>
+          &copy; {{ now.Format "2006" }} {{ $.Site.Params.author }}.
+        </p>
+      </footer>
     </main>
   </body>
 </html>

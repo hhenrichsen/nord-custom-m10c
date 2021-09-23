@@ -1,8 +1,14 @@
 .post-title {
-  color: $lightest-color;
+  color: $darkest-color;
 }
 
 .post-content {
+  max-width: 80ch;
+
+  p {
+    text-align: justify;
+  }
+
   & > pre,
   .highlight {
     margin: 1em 0;
@@ -11,8 +17,8 @@
   & > pre,
   .highlight > pre,
   .highlight > div {
-    border-left: 0.4em solid rgba($primary-color, .8);
-    padding: .5em 1em;
+    border-left: 0.4em solid rgba($primary-color, 0.8);
+    padding: 0.5em 1em;
   }
 
   img {

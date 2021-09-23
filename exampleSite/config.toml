@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 title = "Your title"
 themesDir = "../.."
-theme = "m10c"
+theme = "nord-custom-m10c"
 paginate = 8
 
 [menu]
@@ -33,27 +33,18 @@ paginate = 8
     icon = "twitter"
     name = "Twitter"
     url = "https://twitter.com/gohugoio"
+  [[params.footer]]
+    description = "Colors from"
+    url = "https://www.nordtheme.com/"
+    name = "Nord by ArcticIceStudio"
 
-  # Default theme
-  #[params.style]
-  #  darkestColor = "#242930"
-  #  darkColor = "#353b43"
-  #  lightColor = "#afbac4"
-  #  lightestColor = "#ffffff"
-  #  primaryColor = "#57cc8a"
-
-  # Green theme
-  #[params.style]
-  #  darkestColor = "#315659"
-  #  darkColor = "#253031"
-  #  lightColor = "#96a879"
-  #  lightestColor = "#fff"
-  #  primaryColor = "#dad865"
-
-  # Red theme
-  #[params.style]
-  #  darkestColor = "#d35050"
-  #  darkColor = "#212121"
-  #  lightColor = "#d6d6d6"
-  #  lightestColor = "#d3d3d3"
-  #  primaryColor = "#ffffff"
+  [params.style]
+    # primaryColor = "#8fbcbb" # Frost 1 (Blue)
+    # primaryColor = "#88c0d0" # Frost 2 (Blue)
+    # primaryColor = "#81a1c1" # Frost 3 (Blue)
+    # primaryColor = "#5e81ac" # Frost 4 (Blue, default)
+    # primaryColor = "#bf616a" # Aurora 1 (Red)
+    # primaryColor = "#d08770" # Aurora 2 (Orange)
+    # primaryColor = "#ebcb8b" # Aurora 3 (Yellow)
+    # primaryColor = "#a3be8c" # Aurora 4 (Green)
+    # primaryColor = "#b48ead" # Aurora 5 (Purple)
