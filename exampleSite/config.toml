@@ -3,6 +3,8 @@ title = "Your title"
 themesDir = "../.."
 theme = "nord-custom-m10c"
 paginate = 8
+PygmentsCodeFences = true
+PygmentsStyle = "nord"
 
 [menu]
   [[menu.main]]

@@ -110,6 +110,7 @@ Jekyll's plugin:
 
 is written as this Hugo shortcode:
 
+{{< highlight html >}}
     <!-- image -->
     <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
         {{ with .Get "link"}}<a href="{{.}}">{{ end }}
@@ -128,6 +129,7 @@ is written as this Hugo shortcode:
         {{ end }}
     </figure>
     <!-- image -->
+{{< /highlight >}}
 
 ### Usage
 I simply changed:
