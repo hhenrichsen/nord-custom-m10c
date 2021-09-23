@@ -1,5 +1,6 @@
 :root {
   --base-font-size: 16px;
+  --scrollbar-width: calc(100vw - 100%);
 }
 
 * {
@@ -87,9 +88,9 @@ pre {
   font-size: 1rem;
   line-height: 1.2em;
   margin: 0;
-  overflow: auto;
   background-color: $dark-color;
   max-width: 100%;
+  margin-left: 2px;
 
   @media (prefers-color-scheme: dark) {
     background-color: $darkest-color;

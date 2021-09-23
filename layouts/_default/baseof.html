@@ -8,10 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@5.3.5/dist/simplebar.css"
+    />
+    <script src="https://unpkg.com/simplebar@5.3.5/dist/simplebar.min.js"></script>
+    <noscript>
+      <style>
+        /**
+        * Reinstate scrolling for non-JS clients
+        */
+        .simplebar-content-wrapper {
+          overflow: auto;
+        }
+      </style>
+    </noscript>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
     {{ $codeblockjs := resources.Get "js/codeblock.js" | js.Build }}
     <script defer src="{{ $codeblockjs.Permalink }}"></script>
+    {{ $headerlinks := resources.Get "js/header.js" | js.Build }}
+    <script defer src="{{ $headerlinks.Permalink }}"></script>
 
     {{ range .Site.Params.custom_css -}}
         <link rel="stylesheet" href="{{ . | absURL }}">
