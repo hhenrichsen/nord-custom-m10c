@@ -1,9 +1,27 @@
 .post-title {
   color: $darkest-color;
 }
+@media (prefers-color-scheme: dark) {
+  .post-title,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    color: $lightest-color;
+  }
+}
+
+.post {
+  flex: 1;
+}
 
 .post-content {
+  padding: 1em;
   max-width: 80ch;
+
+  flex: 1;
 
   p {
     text-align: justify;
@@ -19,6 +37,7 @@
   .highlight > div {
     border-left: 0.4em solid rgba($primary-color, 0.8);
     padding: 0.5em 1em;
+    border-radius: 0.25em;
   }
 
   img {

@@ -14,6 +14,13 @@ body {
   color: $dark-color;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $dark-color;
+    color: $light-color;
+  }
+}
+
 h1 {
   font-size: 2em;
 }
@@ -35,6 +42,14 @@ a {
   &:hover {
     color: $darkest-color;
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: lighten($primary-color, 10%);
+
+    &:hover {
+      color: $lightest-color;
+    }
+  }
 }
 
 // Browsers seem to use a smaller default font-size with monospaced code
@@ -44,7 +59,10 @@ a {
 code {
   font-family: monospace, monospace;
   font-size: 1em;
-  color: rgba($primary-color, 0.8);
+  color: $dark-color;
+  @media (prefers-color-scheme: dark) {
+    color: rgba($light-color, 0.8);
+  }
 }
 
 pre {
@@ -53,6 +71,11 @@ pre {
   margin: 0;
   overflow: auto;
   background-color: $dark-color;
+  max-width: 100%;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $darkest-color;
+  }
 
   // A larger monospaced block of text (that isn't mixed with normal text)
   // generally looks heavier than normal text with the same font size. For this
