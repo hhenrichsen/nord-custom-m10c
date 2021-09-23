@@ -1,5 +1,8 @@
 (function() {
-    const article = document.getElementById('article')
+    const article = document.getElementById('article');
+    if (!article) {
+        return;
+    }
     const headings = article.querySelectorAll('h2, h3, h4, h5, h6');
     headings.forEach((heading) => {
         const div = document.createElement('div');
