@@ -22,7 +22,7 @@ jobs:
       working-directory: ./exampleSite
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_DIR: ./exampleSite/public
