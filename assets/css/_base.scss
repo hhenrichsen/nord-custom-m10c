@@ -84,6 +84,10 @@ code {
   }
 }
 
+td:first-of-type pre {
+  user-select: none;
+}
+
 pre {
   font-size: 1rem;
   line-height: 1.2em;
