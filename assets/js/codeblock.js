@@ -6,10 +6,10 @@
   }
 
   function flashCopyMessage(el, msg) {
-    var original = el.textContent;
+    var original = el.innerHTML;
     el.textContent = msg;
     setTimeout(function() {
-      el.textContent = original;
+      el.innerHTML = original;
     }, 1000);
   }
 
@@ -25,7 +25,9 @@
   function addCopyButton(containerEl) {
     var copyBtn = document.createElement("button");
     copyBtn.className = "highlight-copy-btn";
-    copyBtn.textContent = "Copy";
+    var icon = document.createElement("i");
+    icon.setAttribute("data-feather", "clipboard");
+    copyBtn.appendChild(icon);
 
     var elements = containerEl.querySelectorAll('pre');
     console.log(elements);
@@ -66,4 +68,6 @@
   blockArr.forEach((el) => {
     addCopyButton(el);
   });
+
+  feather.replace();
 })();

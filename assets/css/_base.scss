@@ -114,6 +114,10 @@ pre {
 }
 
 .highlight-copy-btn {
+  svg {
+    width: 1em;
+    height: 1em;
+  }
   position: absolute;
   top: 7px;
   right: 7px;
@@ -123,8 +127,9 @@ pre {
   font-size: 0.7em;
   line-height: 1.8;
   color: $dark-color;
-  background-color: $light-color;
-  min-width: 55px;
+  background-color: rgba($light-color, 0.5);
+  min-width: 3em;
+  padding: 0.5em;
   text-align: center;
 }
 
