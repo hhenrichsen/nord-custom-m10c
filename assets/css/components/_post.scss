@@ -39,6 +39,17 @@
   h5,
   h6 {
     display: inline-block;
+    margin: 0;
+  }
+
+  h1,
+  h2 {
+    margin-top: 2em;
+  }
+
+  &:first-child h1,
+  &:first-child h2 {
+    margin-top: 0;
   }
 }
 
@@ -83,4 +94,7 @@
 
 .post-meta {
   font-size: 0.8em;
+  margin-bottom: 4em;
+  padding-bottom: 1em;
+  border-bottom: thin solid rgba($primary-color, 1);
 }
