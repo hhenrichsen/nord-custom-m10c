@@ -24,6 +24,8 @@ Features in this fork:
 - **Custom CSS/JS/Deferred JS**
 - **Custom Footers**
 
+# [Demo Site](https://hhenrichsen.github.io/nord-custom-m10c/)
+
 ## Getting started
 
 ### Installation
