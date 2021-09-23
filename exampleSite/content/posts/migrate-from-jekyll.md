@@ -110,7 +110,7 @@ Jekyll's plugin:
 
 is written as this Hugo shortcode:
 
-{{< highlight html >}}
+{{< highlight html "linenos=table" >}}
     <!-- image -->
     <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
         {{ with .Get "link"}}<a href="{{.}}">{{ end }}

@@ -32,7 +32,7 @@
 
     var codeEl;
     if (elements.length > 1) {
-      codeEl = elements[1];
+      codeEl = elements[1].parentElement;
     }
     else {
       codeEl = elements[0];
@@ -54,7 +54,6 @@
       }
     });
 
-    console.log("Adding child to " + containerEl);
 
     containerEl.appendChild(copyBtn);
   }
