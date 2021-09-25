@@ -15,9 +15,9 @@ $monofont: {{ .Site.Params.style.monospaceFont | default "monospace" }};
 @import 'components/posts_list';
 @import 'components/tag';
 @import 'components/tags_list';
-@import 'components/_code';
-@import 'components/_iconlabel';
-@import 'components/_emphasize';
+@import 'components/code';
+@import 'components/iconlabel';
+@import 'components/emphasize';
 
 // The last 'extra' import can optionally be overridden on a per project
 // basis by creating a <HUGO_PROJECT>/assets/css/_extra.scss file.
