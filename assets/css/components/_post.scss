@@ -67,42 +67,9 @@
     text-align: justify;
   }
 
-  .highlight {
-    border-left: 0.5em solid rgba($primary-color, 0.8);
-    border-radius: 0.25em;
-  }
-
-  & > pre,
-  .highlight {
-    margin: 1em 0;
-  }
-
-  .highlight-label-wrapper {
-    .highlight {
-      margin: 0;
-    }
-
-    margin: 1em 0;
-  }
-
-  & > pre,
-  .highlight > pre,
-  .highlight > div {
-    padding: 0.5em 1em;
-  }
-
   img {
     max-width: 100%;
   }
-}
-
-.highlight .simplebar-content-wrapper,
-.highlight .simplebar-offset {
-  background-color: $darkest-color;
-}
-
-.simplebar-scrollbar::before {
-  background-color: $light-color;
 }
 
 .post-meta {

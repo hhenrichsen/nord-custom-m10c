@@ -1,0 +1,27 @@
+.icon-label {
+  color: $lightest-color;
+  display: inline-flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  top: 1em;
+  left: 2em;
+  background-color: $primary-color;
+  border-radius: 0.5em;
+  z-index: -1;
+  height: 4em;
+  padding: 0.5em;
+  padding-bottom: 1.5em;
+  font-size: 0.75em;
+  line-height: 1em;
+  min-width: 10em;
+  span code {
+    color: $lightest-color;
+    height: 1em;
+  }
+  svg {
+    margin-right: 0.5em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
