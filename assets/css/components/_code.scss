@@ -82,7 +82,7 @@ pre {
   font-size: 0.7em;
   line-height: 1.8;
   color: $dark-color;
-  background-color: var(--light-80-transparent);
+  background-color: rgba($light-color, 0.7);
   min-width: 3em;
   padding: 0.5em;
   text-align: center;
