@@ -13,7 +13,7 @@
 <style>.simplebar-content-wrapper{overflow:auto}</style>
 </noscript>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin=anonymous referrerpolicy=no-referrer></script>
-<link rel=stylesheet href=https://hhenrichsen.github.io/nord-custom-m10c/css/main.min.f1b4e9108824393650be28bb1cdf032306e1b5b0e482fe0fc036bdde5e06dcb0.css>
+<link rel=stylesheet href=https://hhenrichsen.github.io/nord-custom-m10c/css/main.min.014f612b2fde008ffc131039d8c47557a75d3015ed30edf4d8186bb265914c4a.css>
 <script defer src=https://hhenrichsen.github.io/nord-custom-m10c/js/codeblock.js></script>
 <script defer src=https://hhenrichsen.github.io/nord-custom-m10c/js/header.js></script>
 <meta name=twitter:card content="summary">
@@ -116,7 +116,9 @@ With Jekyll, something that looked like</p>
 <p>Jekyll has <a href=http://jekyllrb.com/docs/plugins/>plugins</a>; Hugo has <a href=/doc/shortcodes/>shortcodes</a>. It&rsquo;s fairly trivial to do a port.</p>
 <h3 id=implementation>Implementation</h3>
 <p>As an example, I was using a custom <a href=https://github.com/alexandre-normand/alexandre-normand/blob/74bb12036a71334fdb7dba84e073382fc06908ec/_plugins/image_tag.rb><code>image_tag</code></a> plugin to generate figures with caption when running Jekyll. As I read about shortcodes, I found Hugo had a nice built-in shortcode that does exactly the same thing.</p>
-<p>Jekyll&rsquo;s plugin:</p>
+<p>Jekyll&rsquo;s plugin:
+<div class=highlight-label-wrapper>
+<div class=icon-label><i data-feather=file-text></i><span><code>test.rb</code></span></div>
 <div class=highlight><pre tabindex=0 style=color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby>    <span style=color:#81a1c1;font-weight:700>module</span> <span style=color:#8fbcbb>Jekyll</span>
       <span style=color:#81a1c1;font-weight:700>class</span> <span style=color:#8fbcbb>ImageTag</span> <span style=color:#81a1c1>&lt;</span> <span style=color:#8fbcbb>Liquid</span><span style=color:#81a1c1>::</span><span style=color:#8fbcbb>Tag</span>
         @url <span style=color:#81a1c1>=</span> <span style=color:#81a1c1>nil</span>
@@ -170,7 +172,9 @@ With Jekyll, something that looked like</p>
       <span style=color:#81a1c1;font-weight:700>end</span>
     <span style=color:#81a1c1;font-weight:700>end</span>
     <span style=color:#8fbcbb>Liquid</span><span style=color:#81a1c1>::</span><span style=color:#8fbcbb>Template</span><span style=color:#81a1c1>.</span>register_tag<span style=color:#eceff4>(</span><span style=color:#a3be8c>&#39;image&#39;</span><span style=color:#eceff4>,</span> <span style=color:#8fbcbb>Jekyll</span><span style=color:#81a1c1>::</span><span style=color:#8fbcbb>ImageTag</span><span style=color:#eceff4>)</span>
-</code></pre></div><p>is written as this Hugo shortcode:</p>
+</code></pre></div>
+</div>
+is written as this Hugo shortcode:</p>
 <div class=highlight><div style=color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
 <pre tabindex=0 style=color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#6c6f74"> 1

@@ -20,6 +20,11 @@
       selection.addRange(range);
       return selection;
     }
+    function addBar(el) {
+      new SimpleBar(el, {
+        autoHide: true
+      });
+    }
     function addCopyButton(containerEl) {
       var copyBtn = document.createElement("button");
       copyBtn.className = "highlight-copy-btn";
@@ -34,10 +39,7 @@
       } else {
         codeEl = elements[0];
       }
-      console.log(codeEl);
-      new SimpleBar(codeEl, {
-        autoHide: true
-      });
+      addBar(codeEl);
       copyBtn.addEventListener("click", function() {
         try {
           var selection = selectText(codeEl.firstElementChild);
@@ -52,12 +54,16 @@
       containerEl.appendChild(copyBtn);
     }
     var highlightBlocks = document.getElementsByClassName("highlight");
-    console.log(highlightBlocks);
     var blockArr = Array.prototype.slice.call(highlightBlocks);
-    console.log(blockArr);
     blockArr.forEach((el) => {
       addCopyButton(el);
     });
+    var inputBlocks = document.querySelectorAll(".terminal-input-wrapper");
+    var inputBlockArr = Array.prototype.slice.call(inputBlocks);
+    inputBlockArr.forEach(addBar);
+    var outputBlocks = document.querySelectorAll(".terminal-output");
+    var outputBlockArr = Array.prototype.slice.call(outputBlocks);
+    outputBlockArr.forEach(addBar);
     feather.replace();
   })();
 })();
