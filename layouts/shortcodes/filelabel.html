@@ -1,0 +1,5 @@
+{{- $filename := .Get 0 -}}
+<div class="highlight-label-wrapper">
+<div class="icon-label"><i data-feather="file-text"></i><span><code>{{- $filename -}}</code></span></div>
+{{ .Inner | markdownify }}
+</div>

@@ -27,14 +27,18 @@ Follow the following steps:
 
 Corresponding pseudo commands:
 
-    git clone https://github.com/spf13/hugo
-    cd hugo
-    /path/to/where/you/installed/hugo server --source=./docs
-    > 29 pages created
-    > 0 tags index created
-    > in 27 ms
-    > Web Server is available at http://localhost:1313
-    > Press ctrl+c to stop
+{{< terminal >}}
+git clone https://github.com/spf13/hugo
+cd hugo
+/path/to/where/you/installed/hugo server --source=./docs
+{{< /terminal >}}
+{{< output >}}
+29 pages created
+0 tags index created
+in 27 ms
+Web Server is available at http://localhost:1313
+Press ctrl+c to stop
+{{< /output >}}
 
 Once you've gotten here, follow along the rest of this page on your local build.
 
@@ -44,13 +48,17 @@ Stop the Hugo process by hitting Ctrl+C.
 
 Now we are going to run hugo again, but this time with hugo in watch mode.
 
-    /path/to/hugo/from/step/1/hugo server --source=./docs --watch
-    > 29 pages created
-    > 0 tags index created
-    > in 27 ms
-    > Web Server is available at http://localhost:1313
-    > Watching for changes in /Users/spf13/Code/hugo/docs/content
-    > Press ctrl+c to stop
+{{< terminal >}}
+/path/to/hugo/from/step/1/hugo server --source=./docs --watch
+{{< / terminal >}}
+{{< output >}}
+29 pages created
+0 tags index created
+in 27 ms
+Web Server is available at http://localhost:1313
+Watching for changes in /Users/spf13/Code/hugo/docs/content
+Press ctrl+c to stop
+{{< /output >}}
 
 
 Open your [favorite editor](http://vim.spf13.com) and change one of the source
@@ -62,11 +70,13 @@ are located at the same relative location as the url, in our case
 
 Change and save this file.. Notice what happened in your terminal.
 
-    > Change detected, rebuilding site
+{{< output >}}
+Change detected, rebuilding site
 
-    > 29 pages created
-    > 0 tags index created
-    > in 26 ms
+29 pages created
+0 tags index created
+in 26 ms
+{{< /output >}}
 
 Refresh the browser and observe that the typo is now fixed.
 
@@ -75,4 +85,7 @@ Having nearly instant feedback enables you to have your creativity flow without 
 
 ## Step 4. Have fun
 
+
+{{< emphasize >}}
 The best way to learn something is to play with it.
+{{< /emphasize >}}

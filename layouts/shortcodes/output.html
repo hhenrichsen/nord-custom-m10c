@@ -1,0 +1,10 @@
+{{- with (trim .Inner "\r\n" ) -}}
+<div class="terminal-output-container">
+<div class="icon-label"><i data-feather="align-justify"></i><span>Output</span></div>
+<div class="terminal-output">
+    <pre><code>{{- range (split . "\n") -}}
+                    {{- printf "%s\n" . -}}
+                {{- end -}}</code></pre>
+</div>
+</div>
+{{- end -}}

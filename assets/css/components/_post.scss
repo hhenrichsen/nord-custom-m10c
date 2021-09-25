@@ -1,5 +1,6 @@
 .post-title {
   color: $darkest-color;
+  line-height: 1.6em;
 }
 @media (prefers-color-scheme: dark) {
   .post-title,
@@ -10,7 +11,6 @@
   h5,
   p {
     color: $lightest-color;
-    line-height: 1.6em;
   }
 }
 
@@ -68,12 +68,20 @@
   }
 
   .highlight {
-    border-left: 0.4em solid rgba($primary-color, 0.8);
+    border-left: 0.5em solid rgba($primary-color, 0.8);
     border-radius: 0.25em;
   }
 
   & > pre,
   .highlight {
+    margin: 1em 0;
+  }
+
+  .highlight-label-wrapper {
+    .highlight {
+      margin: 0;
+    }
+
     margin: 1em 0;
   }
 
@@ -88,8 +96,8 @@
   }
 }
 
-.simplebar-content-wrapper,
-.simplebar-offset {
+.highlight .simplebar-content-wrapper,
+.highlight .simplebar-offset {
   background-color: $darkest-color;
 }
 
