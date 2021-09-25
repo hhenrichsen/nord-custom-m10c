@@ -3,11 +3,13 @@
 <div class="aside {{ $classes }}">
     <i data-feather="help-circle"></i>
     <div class="aside-content">
-            <details class="aside-inner-content">
-                <summary class="aside-header">
-                <strong>{{ i18n "aside" }}</strong> {{ $spoiler }}
-                </summary>
-                {{ .Inner | markdownify }}
-            </details>
+        <details>
+            <summary class="aside-header">
+            <strong>{{ i18n "aside" }}</strong> {{ $spoiler }}
+            </summary>
+            <div class="aside-inner-content">
+            {{ .Inner | markdownify }}
+            </div>
+        </details>
     </div>
 </div>
