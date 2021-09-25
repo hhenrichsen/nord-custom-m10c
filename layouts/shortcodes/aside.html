@@ -1,12 +1,13 @@
-{{ $classes := .Get 0 }}
+{{ $spoiler := .Get 0 }}
+{{ $classes := .Get 1 }}
 <div class="aside {{ $classes }}">
     <span class="aside-icon"><i data-feather="help-circle"></i></span>
     <div class="aside-content">
-        <span class="aside-header">
-            <strong>{{ i18n "aside" }}</strong>
-        </span>
-        <span class="aside-inner-content">
-            {{ .Inner | markdownify }}
-        </span>
+            <details class="aside-inner-content">
+                <summary class="aside-header">
+                <strong>{{ i18n "aside" }}</strong> {{ $spoiler }}
+                </summary>
+                {{ .Inner | markdownify }}
+            </details>
     </div>
 </div>
