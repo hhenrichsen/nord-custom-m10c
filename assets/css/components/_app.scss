@@ -64,13 +64,13 @@ body {
   }
 }
 
-@media (min-width: 1072px) {
+@media (min-width: 1320px) {
   body {
     flex-direction: row;
   }
 
   .app-container {
-    min-width: 640px;
+    min-width: 720px;
   }
 
   .app-header {

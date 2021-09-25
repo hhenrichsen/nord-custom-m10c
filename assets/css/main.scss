@@ -3,21 +3,70 @@ $dark-color: {{ .Site.Params.style.darkColor | default "#424c5e" }};
 $light-color: {{ .Site.Params.style.lightColor | default "#d8dee9" }};
 $lightest-color: {{ .Site.Params.style.lightestColor | default "#eceff4" }};
 $primary-color: {{ .Site.Params.style.primaryColor | default "#5e81ac" }};
+$warning-color: {{ .Site.Params.style.warningColor | default "#ebcb8b" }};
+$caution-color: {{ .Site.Params.style.cautionColor | default "#bf616a" }};
 $monofont: {{ .Site.Params.style.monospaceFont | default "monospace" }};
+
+// https://stackoverflow.com/a/39906179
+@function hexToRGBString($hexColor) {
+  @return "#{red($hexColor)},#{green($hexColor)},#{blue($hexColor)}";
+}
+
+:root {
+    --text-color: #{$darkest-color};
+    --text-color-rgb: #{hexToRGBString($darkest-color)};
+    --inverse-color: #{$lightest-color};
+    --light-color-rgb: #{hexToRGBString($lightest-color)};
+    --primary-color: #{$primary-color};
+    --primary-color-rgb: #{red($primary-color)}, #{green($primary-color)}, #{blue($primary-color)};
+    --primary-color-red: #{red($primary-color)};
+    --primary-color-green: #{green($primary-color)};
+    --primary-color-blue: #{blue($primary-color)};
+    --primary-text-color-component: calc(
+        (
+        (
+            (
+            (var(--primary-color-red) * 299) +
+            (var(--primary-color-green) * 587) +
+            (var(--primary-color-blue) * 114)
+            ) / 1000
+        ) - 128
+        ) * -1000
+    );
+    --primary-text-color: rgb(var(--primary-text-color-component), var(--primary-text-color-component), var(--primary-text-color-component));
+    --light-text-color: #{$dark-color};
+    --code-color: #{$darkest-color};
+    @media (prefers-color-scheme: dark) {
+        --light-text-color: #{$light-color};
+        --text-color: #{$lightest-color};
+        --text-color-rgb: #{hexToRGBString($lightest-color)};
+        --inverse-color: #{$dark-color};
+    }
+
+    @for $i from 1 through 9 {
+        --text-#{$i}0-transparent: #{rgba(var(--text-color-rgb), #{$i * .1}))};
+    }
+    @for $i from 1 through 9 {
+        --primary-#{$i}0-transparent: #{rgba(var(--primary-color-rgb), #{$i * .1})};
+    }
+}
 
 @import 'base';
 
 @import 'components/app';
+@import 'components/aside';
+@import 'components/caution';
+@import 'components/code';
 @import 'components/error_404';
 @import 'components/icon';
+@import 'components/iconlabel';
 @import 'components/pagination';
 @import 'components/post';
 @import 'components/posts_list';
 @import 'components/tag';
 @import 'components/tags_list';
-@import 'components/code';
-@import 'components/iconlabel';
 @import 'components/emphasize';
+@import 'components/warning';
 
 // The last 'extra' import can optionally be overridden on a per project
 // basis by creating a <HUGO_PROJECT>/assets/css/_extra.scss file.

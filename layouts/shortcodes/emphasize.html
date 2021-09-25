@@ -1,3 +1,12 @@
-<div class="emphasize">
-    {{ .Inner | markdownify }}
+{{ $classes := .Get 0 }}
+<div class="emphasize {{ $classes }}">
+    <span class="emphasize-icon"><i data-feather="key"></i></span>
+    <div class="emphasize-content">
+        <span class="emphasize-header">
+            <strong>{{ i18n "emphasize" }}</strong>
+        </span>
+        <span class="emphasize-inner-content">
+            {{ .Inner | markdownify }}
+        </span>
+    </div>
 </div>

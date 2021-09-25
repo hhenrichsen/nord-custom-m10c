@@ -6,7 +6,7 @@
   list-style: none;
   padding: 1em 0;
   &:not(:last-child) {
-    border-bottom: thin solid$primary-color;
+    border-bottom: thin solid $primary-color;
   }
 }
 

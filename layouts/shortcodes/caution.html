@@ -1,0 +1,12 @@
+{{ $classes := .Get 0 }}
+<div class="caution {{ $classes }}">
+    <span class="caution-icon"><i data-feather="alert-octagon"></i></span>
+    <div class="caution-content">
+        <span class="caution-header">
+            <strong>{{ i18n "caution" }}</strong>
+        </span>
+        <span class="caution-inner-content">
+            {{ .Inner | markdownify }}
+        </span>
+    </div>
+</div>

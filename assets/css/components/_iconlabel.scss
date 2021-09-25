@@ -1,5 +1,5 @@
 .icon-label {
-  color: $lightest-color;
+  color: var(--primary-text-color);
   display: inline-flex;
   position: relative;
   justify-content: space-between;
@@ -16,7 +16,7 @@
   line-height: 1em;
   min-width: 10em;
   span code {
-    color: $lightest-color;
+    color: var(--primary-text-color);
     height: 1em;
   }
   svg {

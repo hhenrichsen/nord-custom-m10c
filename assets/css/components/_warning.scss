@@ -1,11 +1,11 @@
-.emphasize {
+.warning {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 0.25em solid $primary-color;
+  border: 0.25em solid $warning-color;
   border-radius: 0.5em;
   border-radius: 0.5em;
-  color: $primary-color;
+  color: $warning-color;
   padding: 1em;
   margin: 1em auto;
 
@@ -17,16 +17,16 @@
     font-size: 1.5em;
   }
 
-  .emphasize-content {
+  .warning-content {
     flex: 1;
     display: flex;
     flex-direction: column;
 
-    .emphasize-header {
+    .warning-header {
       flex: 0;
       text-align: center;
     }
-    .emphasize-inner-content {
+    .warning-inner-content {
       flex: 1;
       text-align: left;
       color: var(--text-color);
@@ -43,11 +43,11 @@
   @media (min-width: 1320px) {
     flex-direction: row;
 
-    .emphasize-content {
-      border-left: thin solid $primary-color;
+    .warning-content {
+      border-left: thin solid $warning-color;
       padding-left: 1em;
 
-      .emphasize-header {
+      .warning-header {
         text-align: left;
       }
     }

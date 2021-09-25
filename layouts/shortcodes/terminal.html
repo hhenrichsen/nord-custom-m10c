@@ -1,11 +1,7 @@
 {{ with (trim .Inner "\n\r") }}
 {{ $lines := split . "\n" }}
 <div class="terminal-input-container">
-    {{ if (gt (len $lines) 1) }}
-        <div class="icon-label"><i data-feather="terminal"></i><span>Commands</span></div>
-    {{ else }}
-        <div class="icon-label"><i data-feather="terminal"></i><span>Command</span></div>
-    {{ end }}
+    <div class="icon-label"><i data-feather="terminal"></i><span>{{ i18n "command" (len $lines) }}</span></div>
     <div class="terminal-input">
         <div class="terminal-input-wrapper">
             <table>

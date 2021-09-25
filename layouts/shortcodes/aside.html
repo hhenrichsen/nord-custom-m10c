@@ -1,0 +1,12 @@
+{{ $classes := .Get 0 }}
+<div class="aside {{ $classes }}">
+    <span class="aside-icon"><i data-feather="help-circle"></i></span>
+    <div class="aside-content">
+        <span class="aside-header">
+            <strong>{{ i18n "aside" }}</strong>
+        </span>
+        <span class="aside-inner-content">
+            {{ .Inner | markdownify }}
+        </span>
+    </div>
+</div>

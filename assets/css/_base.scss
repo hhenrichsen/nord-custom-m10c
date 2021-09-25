@@ -1,5 +1,5 @@
 :root {
-  --base-font-size: 16px;
+  --base-font-size: 20px;
   --scrollbar-width: calc(100vw - 100%);
 }
 
@@ -15,15 +15,8 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  background: $light-color;
-  color: $dark-color;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: $dark-color;
-    color: $light-color;
-  }
+  background: var(--inverse-color);
+  color: var(--text-color);
 }
 
 h1 {
@@ -32,14 +25,14 @@ h1 {
 
 .display-small {
   visibility: visible;
-  @media (min-width: 1072px) {
+  @media (min-width: 1320px) {
     visibility: hidden;
   }
 }
 
 .display-large {
   visibility: hidden;
-  @media (min-width: 1072px) {
+  @media (min-width: 1320px) {
     visibility: visible;
   }
 }
@@ -50,24 +43,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: $darkest-color;
+  color: var(--text-color);
 }
 
 a {
-  color: $primary-color;
+  color: var(--primary-color);
   transition: color 0.35s;
   text-decoration: none;
 
   &:hover {
-    color: $darkest-color;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    color: lighten($primary-color, 10%);
-
-    &:hover {
-      color: $lightest-color;
-    }
+    color: var(--text-color);
   }
 }
 
