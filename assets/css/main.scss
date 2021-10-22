@@ -13,9 +13,6 @@ $monofont: {{ .Site.Params.style.monospaceFont | default "monospace" }};
 }
 
 :root {
-    --text-color: #{$darkest-color};
-    --text-color-rgb: #{hexToRGBString($darkest-color)};
-    --inverse-color: #{$lightest-color};
     --light-color-rgb: #{hexToRGBString($lightest-color)};
     --primary-color: #{$primary-color};
     --primary-color-rgb: #{red($primary-color)}, #{green($primary-color)}, #{blue($primary-color)};
@@ -34,13 +31,16 @@ $monofont: {{ .Site.Params.style.monospaceFont | default "monospace" }};
         ) * -1000
     );
     --primary-text-color: rgb(var(--primary-text-color-component), var(--primary-text-color-component), var(--primary-text-color-component));
-    --light-text-color: #{$dark-color};
+    --light-text-color: #{$light-color};
+    --text-color: #{$lightest-color};
+    --text-color-rgb: #{hexToRGBString($lightest-color)};
+    --inverse-color: #{$dark-color};
     --code-color: #{$darkest-color};
-    @media (prefers-color-scheme: dark) {
-        --light-text-color: #{$light-color};
-        --text-color: #{$lightest-color};
-        --text-color-rgb: #{hexToRGBString($lightest-color)};
-        --inverse-color: #{$dark-color};
+    &.light-mode {
+        --light-text-color: #{$dark-color};
+        --text-color: #{$darkest-color};
+        --text-color-rgb: #{hexToRGBString($darkest-color)};
+        --inverse-color: #{$lightest-color};
     }
 
     @for $i from 1 through 9 {

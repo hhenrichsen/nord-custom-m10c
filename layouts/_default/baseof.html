@@ -8,6 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            processEscapes: true
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    }
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" type="text/css"href="https://tikzjax.com/v1/fonts.css">
     <link
       rel="stylesheet"
       href="https://unpkg.com/simplebar@5.3.5/dist/simplebar.css"
@@ -26,8 +40,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $initjs := resources.Get "js/init.js" | js.Build }}
+    <script defer src="{{ $initjs.Permalink }}"></script>
     {{ $codeblockjs := resources.Get "js/codeblock.js" | js.Build }}
     <script defer src="{{ $codeblockjs.Permalink }}"></script>
+    {{ $barjs := resources.Get "js/bars.js" | js.Build }}
+    <script defer src="{{ $barjs.Permalink }}"></script>
     {{ $headerlinks := resources.Get "js/header.js" | js.Build }}
     <script defer src="{{ $headerlinks.Permalink }}"></script>
 
@@ -70,6 +88,9 @@
             {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
           </a>
         {{ end }}
+          <span id="dark-toggle" class="glow">
+            <i data-feather="sun" class="icon"></i>
+          </span>
       </div>
       {{- end }}
       <div class="spacer"></div>
