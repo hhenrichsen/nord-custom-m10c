@@ -114,23 +114,23 @@
       {{ block "main" . }}
         {{ .Content }}
       {{ end }}
-      <div class="spacer"></div>
-      <footer class="footer">
-        {{- with .Site.Params.footer }}
-          {{ range . }}
-          <p>
-            {{ if (isset . "url" )}}
-              {{ .description }} <a href="{{ .url }}">{{ .name }}</a>.
-            {{ else }}
-              {{- .description -}}.
-            {{ end }}
-          </p>
-          {{ end }}
-        {{- end }}
-        <p>
-          &copy; {{ now.Format "2006" }} {{ $.Site.Params.author }}.
-        </p>
-      </footer>
+    <div class="spacer"></div>
     </main>
+    <footer class="footer">
+      {{- with .Site.Params.footer }}
+        {{ range . }}
+        <p>
+          {{ if (isset . "url" )}}
+            {{ .description }} <a href="{{ .url }}">{{ .name }}</a>.
+          {{ else }}
+            {{- .description -}}.
+          {{ end }}
+        </p>
+        {{ end }}
+      {{- end }}
+      <p>
+        &copy; {{ now.Format "2006" }} {{ $.Site.Params.author }}.
+      </p>
+    </footer>
   </body>
 </html>

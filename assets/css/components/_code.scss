@@ -49,6 +49,10 @@ code {
 
 }
 
+pre > code {
+  padding: 0;
+}
+
 td:first-of-type pre {
   user-select: none;
 }
