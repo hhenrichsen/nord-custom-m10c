@@ -2,10 +2,12 @@
   // <stdin>
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
     const dark = e.matches;
-    if (dark) {
+    if (!dark) {
       document.documentElement.classList.add("light-mode");
+      localStorage.getItem("lm") == null && localStorage.setItem("lm", "true");
     } else {
       document.documentElement.classList.remove("light-mode");
+      localStorage.getItem("lm") == null && localStorage.setItem("lm", "false");
     }
   });
   function init() {
