@@ -4,34 +4,20 @@
 }
 
 .heading {
-  align-items: center;
-
   a {
     svg {
       width: 1em;
       height: 1em;
     }
-    padding-left: 1em;
+    padding: 0.5em;
+    padding-left: 0;
     display: inline-block;
-    color: rgba($primary-color, 0.2);
-  }
-
-  &:hover {
-    a {
-      color: rgba($primary-color, 1);
+    color: $primary-color;
+    &:hover {
+      color: var(--text-color);
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    display: inline-block;
-    margin: 0;
-    font-weight: bold;
-  }
 
   h1,
   h2,
@@ -39,7 +25,9 @@
   h4,
   h5,
   h6 {
-    margin-top: 2em;
+    display: inline;
+    margin: 0;
+    font-weight: bold;
   }
 
   &:first-child h1,
@@ -53,11 +41,11 @@
 }
 
 .post {
-  max-width: 720px;
+  max-width: 640px;
 }
 
 .post-content {
-  max-width: 720px;
+  max-width: 640px;
 
   flex: 1;
 
@@ -75,4 +63,8 @@
   margin-bottom: 4em;
   padding-bottom: 1em;
   border-bottom: thin solid rgba($primary-color, 1);
+}
+
+p + .heading {
+  margin-top: 3em;
 }
