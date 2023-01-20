@@ -1,8 +1,9 @@
 .terminal-output {
   width: 100%;
   background-color: var(--code-color);
-  border-left: 8px solid $primary-color;
+  border-left: 4px solid $primary-color;
   border-radius: 0.25em;
+  box-shadow: 0.25em 0.25em 0.25em var(--code-color);
 
   pre {
     padding: 0.5em;
@@ -17,11 +18,12 @@
 .terminal-input {
   background-color: var(--code-color);
   border-radius: 0.25em;
-  border-left: 8px solid $primary-color;
+  border-left: 4px solid $primary-color;
   display: flex;
   flex-direction: column;
   white-space: nowrap;
   padding: 0.25em;
+  box-shadow: 0.25em 0.25em 0.25em var(--code-color);
 
   table {
     border-spacing: 0;
@@ -119,8 +121,9 @@ pre {
 }
 
 .highlight {
-  border-left: 8px solid var(--primary-color);
+  border-left: 4px solid var(--primary-color);
   border-radius: 0.25em;
+  box-shadow: 0.25em 0.25em 0.25em var(--code-color);
 }
 
 .highlight {
@@ -132,7 +135,7 @@ pre {
     margin: 0;
   }
 
-  margin: 1em 0;
+  margin: 0;
 }
 
 .highlight > pre,
