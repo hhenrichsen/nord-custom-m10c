@@ -32,7 +32,6 @@
       icon.setAttribute("data-feather", "clipboard");
       copyBtn.appendChild(icon);
       var elements = containerEl.querySelectorAll("pre");
-      console.log(elements);
       var codeEl;
       if (elements.length > 1) {
         codeEl = elements[1].parentElement;
@@ -47,7 +46,6 @@
           selection.removeAllRanges();
           flashCopyMessage(copyBtn, "Copied!");
         } catch (e) {
-          console && console.log(e);
           flashCopyMessage(copyBtn, "Failed :'(");
         }
       });
