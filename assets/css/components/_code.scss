@@ -95,9 +95,13 @@ pre {
 }
 
 .highlight-copy-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   svg {
     width: 1em;
     height: 1em;
+    margin: auto;
   }
   position: absolute;
   top: 7px;
@@ -108,10 +112,8 @@ pre {
   line-height: 1.8;
   color: $dark-color;
   background-color: rgba($light-color, 0.7);
-  min-width: 1.75em;
-  max-width: 1.75em;
-  min-height: 1.75em;
-  max-height: 1.75em;
+  min-width: 2.25em;
+  min-height: 2.25em;
   padding: 2px;
   text-align: center;
 }
