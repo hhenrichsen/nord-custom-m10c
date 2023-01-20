@@ -18,6 +18,7 @@
     } else {
       document.documentElement.classList.remove("light-mode");
     }
+    setTimeout(() => document.documentElement.classList.add("toggle"), 200);
   }
   function toggleDarkMode() {
     const classList = document.documentElement.classList;
