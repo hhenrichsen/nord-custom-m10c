@@ -21,9 +21,11 @@
   display: flex;
   flex-direction: column;
   white-space: nowrap;
+  padding: 0.25em;
 
   table {
-    padding: 0.25em 0;
+    border-spacing: 0;
+    border-collapse: collapse;
   }
 }
 
@@ -41,12 +43,11 @@
 // the very noticeable difference in x-height). This CSS corrects that problem.
 code {
   font-family: $monofont, monospace;
-  font-size: 1em;
+  font-size: 0.75em;
   color: rgba($light-color, 0.8);
-  padding: 4px;
+  padding: 0.25em 0.5em;
   border-radius: 4px;
   background-color: $darkest-color;
-
 }
 
 pre > code {
@@ -55,6 +56,17 @@ pre > code {
 
 td:first-of-type pre {
   user-select: none;
+  padding-right: 0;
+  span {
+    margin-right: 0;
+    span {
+      margin-right: 0;
+    }
+  }
+}
+
+td:nth-of-type(2) pre {
+  padding-left: 0;
 }
 
 pre {
@@ -65,6 +77,7 @@ pre {
   max-width: 100%;
   border-top-right-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
+  padding: 0.5em;
 
   // A larger monospaced block of text (that isn't mixed with normal text)
   // generally looks heavier than normal text with the same font size. For this
@@ -127,6 +140,10 @@ pre {
   padding: 0.5em 1em;
   border-top-right-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
+}
+
+.highlight .simplebar-content {
+  border-radius: 0.25em;
 }
 
 .highlight .simplebar-content-wrapper,
