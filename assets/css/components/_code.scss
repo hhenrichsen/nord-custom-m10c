@@ -28,6 +28,14 @@
   table {
     border-spacing: 0;
     border-collapse: collapse;
+
+    tr:last-of-type {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  pre {
+    padding: 0;
   }
 }
 
