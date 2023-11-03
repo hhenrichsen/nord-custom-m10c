@@ -31,7 +31,13 @@
       {{ .Content }}
     </div>
     <div class="post-footer">
-      {{ template "_internal/disqus.html" . }}
+      <script src="https://utteranc.es/client.js"
+        repo="{{ .Site.Params.utterances_repo }}"
+        issue-term="pathname"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+      </script>
     </div>
   </article>
 {{ end }}
